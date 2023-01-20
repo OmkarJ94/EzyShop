@@ -1,0 +1,38 @@
+{
+  "name": "codeswear",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "vercel-build": "npm run dev && next build"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "crypto-js": "^4.1.1",
+    "eslint": "8.28.0",
+    "eslint-config-next": "13.0.4",
+    "g": "^2.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.7.3",
+    "next": "13.0.4",
+    "nodemailer": "^6.8.0",
+    "paytmchecksum": "^1.5.0",
+    "razorpay": "^2.8.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.6.0",
+    "react-router-dom": "^6.4.3",
+    "react-toastify": "^9.1.1",
+    "react-top-loading-bar": "^2.3.1",
+    "validator": "^13.7.0",
+    "vercel": "^28.7.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.19",
+    "tailwindcss": "^3.2.4"
+  }
+}
