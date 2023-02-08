@@ -45,7 +45,7 @@ export default async function handler(req, res) {
     if (req.method === "POST") {
         try {
             let { email } = req.body;
-
+            console.log(email);
             if (!email) {
                 return res.status(404).json({ error: "User Not Found" });
             }
