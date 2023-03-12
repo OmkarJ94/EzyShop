@@ -1,7 +1,7 @@
 import otp from "../../Models/Otp"
 import nodemailer from "nodemailer"
 import User from "../../Models/User"
-require("../../Middleware/conn")
+require("../../db/conn")
 const mailer = (mail, otp, body) => {
 
     try {

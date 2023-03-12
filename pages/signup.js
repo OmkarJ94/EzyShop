@@ -33,7 +33,7 @@ const Signup = () => {
     }
     try {
       setLoading(true)
-      const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/signup`, {
+      const response = await fetch(`/api/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -60,7 +60,7 @@ const Signup = () => {
         });
         setLoading(false)
         console.log("error")
-        router.push(`${process.env.NEXT_PUBLIC_HOST}`)
+        router.push("/")
       }
       else {
         console.log("error")

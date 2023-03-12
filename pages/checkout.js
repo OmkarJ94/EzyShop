@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useRouter } from "next/router"
 import { AiOutlineShoppingCart, AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/ai';
 import Link from 'next/link'
 // import Razorpay from 'razorpay';
@@ -9,6 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Checkout = ({ cart, addtoCart, removeCart, clearCart, subTotal }) => {
+  const router = useRouter()
   const [Name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [address, setAddress] = useState("")
@@ -22,7 +24,7 @@ const Checkout = ({ cart, addtoCart, removeCart, clearCart, subTotal }) => {
 
   const fetchData = async (token) => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getUser?token=${token}`, {
+      const response = await fetch(`/api/getUser?token=${token}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -34,7 +36,7 @@ const Checkout = ({ cart, addtoCart, removeCart, clearCart, subTotal }) => {
       setEmail(data.email);
       setAddress(data.address);
       setPhone(data.phone)
-      
+
 
     } catch (error) {
       console.log(error)
@@ -47,6 +49,16 @@ const Checkout = ({ cart, addtoCart, removeCart, clearCart, subTotal }) => {
       fetchData(token);
     }
     else {
+      toast.error('You Must Be Login', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       router.push("/login")
     }
   }, [])
@@ -125,7 +137,7 @@ const Checkout = ({ cart, addtoCart, removeCart, clearCart, subTotal }) => {
   const handlePayment = async () => {
     try {
       let oid = Math.floor(Math.random() * (Date.now()))
-      const data = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/transcation`, {
+      const data = await fetch(`/api/transcation`, {
 
         method: "POST",
         headers: {
@@ -174,7 +186,7 @@ const Checkout = ({ cart, addtoCart, removeCart, clearCart, subTotal }) => {
           "description": "Test Transaction",
           "image": "https://example.com/your_logo",
           "order_id": result.order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-          "callback_url": `${process.env.NEXT_PUBLIC_HOST}/posttransacation`,
+          "callback_url": `/posttransacation`,
           "prefill": {
             "name": "Gaurav Kumar",
             "email": "gaurav.kumar@example.com",

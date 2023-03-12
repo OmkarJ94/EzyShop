@@ -35,7 +35,7 @@ const Login = () => {
     }
     try {
       setLoading(true)
-      const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/login`, {
+      const response = await fetch(`/api/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -62,7 +62,7 @@ const Login = () => {
 
         setTimeout(() => {
 
-          router.push(`${process.env.NEXT_PUBLIC_HOST}`)
+          router.push("/")
         }, 500)
 
 

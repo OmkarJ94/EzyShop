@@ -1,5 +1,5 @@
 const Razorpay = require('razorpay');
-require("../../Middleware/conn")
+require("../../db/conn")
 import Order from "../../Models/Order"
 import Product from "../../Models/Prod"
 

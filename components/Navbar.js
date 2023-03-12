@@ -22,7 +22,7 @@ const Navbar = ({ logout, user, cart, addtoCart, removeCart, clearCart, subTotal
 
   return (
     <>
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center sticky bg-white top-0 z-10">
+      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center sticky bg-white top-0 z-10 shadow-2xl">
         <ToastContainer />
         <div className="logo mx-5">
           <Link href="/" className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
@@ -35,7 +35,7 @@ const Navbar = ({ logout, user, cart, addtoCart, removeCart, clearCart, subTotal
           <Link href="/stickers" className="mr-5 hover:text-gray-900">Stickers</Link>
           <Link href="/mugs" className="mr-5 hover:text-gray-900">Mugs</Link>
         </nav>
-        <div className="cart absolute right-0 top-6  flex">
+        <div className="cart absolute right-0 top-6  flex mr-5">
           <div onMouseOver={() => { setDropdown(true) }} onMouseLeave={() => { setDropdown(false) }}>
             {dropdown && <div onMouseOver={() => { setDropdown(true) }} onMouseLeave={() => { setDropdown(false) }} className=" absolute right-8 bg-white shadow-lg border top-7 rounded-md px-5 w-32">
               <ul>
@@ -43,7 +43,7 @@ const Navbar = ({ logout, user, cart, addtoCart, removeCart, clearCart, subTotal
                 <Link href="/orders"> <li className="py-1 hover:text-pink-700 text-sm cursor-pointer">Orders</li></Link>
                 <li onClick={() => {
                   logout()
-              
+
                   router.push("/login")
                 }} className="py-1 hover:text-pink-700 text-sm cursor-pointer">Logout</li>
 

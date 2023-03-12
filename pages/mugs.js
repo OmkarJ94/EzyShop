@@ -61,7 +61,10 @@ const Mugs = ({ products }) => {
 }
 
 export async function getServerSideProps(context) {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getMugs`);
+  const { token } = context.query
+
+  let host = process.env.NODE_ENV === "development" ? "http" : "https"
+  const data = await fetch(`${host}://${context.req.headers.host}/api/getMugs`);
   const res = await data.json();
 
   return {

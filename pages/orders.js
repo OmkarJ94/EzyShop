@@ -8,7 +8,7 @@ const Orders = ({ user, clearCart }) => {
     const [data, setData] = useState([])
     const fetchData = async (token) => {
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getorder`, {
+            const response = await fetch(`/api/getorder`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

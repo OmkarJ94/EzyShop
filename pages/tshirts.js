@@ -92,7 +92,10 @@ const Tshirts = ({ products }) => {
 };
 
 export async function getServerSideProps(context) {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getTshirts`);
+  const { token } = context.query
+
+  let host = process.env.NODE_ENV === "development" ? "http" : "https"
+  const data = await fetch(`${host}://${context.req.headers.host}/api/getTshirts`);
 
   const res = await data.json();
   console.log(res);

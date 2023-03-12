@@ -44,7 +44,10 @@ const Stickers = ({ products }) => {
 }
 
 export async function getServerSideProps(context) {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getStickers`);
+  const { token } = context.query
+
+  let host = process.env.NODE_ENV === "development" ? "http" : "https"
+  const data = await fetch(`${host}://${context.req.headers.host}/api/getStickers`);
   const res = await data.json();
 
   return {

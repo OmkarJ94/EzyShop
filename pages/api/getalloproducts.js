@@ -1,6 +1,6 @@
 
 const Razorpay = require('razorpay');
-require("../../Middleware/conn")
+require("../../db/conn")
 console.log("here")
 import Order from "../../Models/Prod"
 export default async function transcation(req, res) {

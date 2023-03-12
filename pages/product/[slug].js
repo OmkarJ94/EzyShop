@@ -40,7 +40,7 @@ const Slug = ({ cart, addtoCart, removeCart, clearCart, subTotal, products, vari
 
   }
   const refresh = (newsize, newcolor) => {
-    let url = `${process.env.NEXT_PUBLIC_HOST}/product/${variants[newcolor][newsize]['slug']}`
+    let url = `/product/${variants[newcolor][newsize]['slug']}`
     window.location = url
 
   }

@@ -1,5 +1,5 @@
 import User from "../../Models/User"
-require("../../Middleware/conn")
+require("../../db/conn")
 var CryptoJS = require("crypto-js");
 import Otp from "../../Models/Otp"
 

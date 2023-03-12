@@ -31,7 +31,7 @@ const Changepassword = () => {
                 return;
             }
 
-            let data = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/updatepassword`, {
+            let data = await fetch(`/api/updatepassword`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

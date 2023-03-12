@@ -2,7 +2,7 @@
 const Razorpay = require('razorpay');
 var crypto = require("crypto");
 import Product from "../../Models/Prod"
-require("../../Middleware/conn")
+require("../../db/conn")
 import Order from "../../Models/Order"
 
 

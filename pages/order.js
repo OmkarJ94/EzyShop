@@ -11,7 +11,7 @@ const Order = ({ cart, addtoCart, removeCart, clearCart, subTotal }) => {
 
     if (token) {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getparticularproduct`, {
+        const response = await fetch(`/api/getparticularproduct`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

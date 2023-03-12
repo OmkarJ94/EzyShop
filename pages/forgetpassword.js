@@ -12,7 +12,7 @@ const Forgetpassword = () => {
         e.preventDefault();
         setLoading(true)
         try {
-            let data = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/forgot`, {
+            let data = await fetch(`/api/forgot`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

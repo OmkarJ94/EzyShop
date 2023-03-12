@@ -1,6 +1,6 @@
 import Order from "../../Models/Order"
 import jwt from 'jsonwebtoken';
-require("../../Middleware/conn")
+require("../../db/conn")
 export default async function handler(req, res) {
     try {
         const { token, slug, orderId } = req.body;

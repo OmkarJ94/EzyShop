@@ -1,7 +1,7 @@
 // import Product from "../../Models/Product"
-// import connectDb from "../../Middleware/conn"
+// import connectDb from "../../db/conn"
 
-require("../../Middleware/conn")
+require("../../db/conn")
 import Order from "../../Models/Order"
 
 

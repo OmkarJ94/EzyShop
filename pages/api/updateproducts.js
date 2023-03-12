@@ -1,5 +1,5 @@
 
-require("../../Middleware/conn")
+require("../../db/conn")
 import Product from "../../Models/Prod"
 const handler = async (req, res) => {
     if (req.method === "POST") {

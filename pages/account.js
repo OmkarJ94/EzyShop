@@ -29,7 +29,7 @@ const Account = () => {
   const fetchUser = async () => {
     try {
       let token = localStorage.getItem("token");
-      const data = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getUser?token=${token}`)
+      const data = await fetch(`/api/getUser?token=${token}`)
       const result = await data.json()
       setUser(result)
       setData({
@@ -63,7 +63,7 @@ const Account = () => {
     }
     try {
       setLoading(true)
-      let response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/signup`, {
+      let response = await fetch(`/api/signup`, {
         method: "POST",
         headers: {
           "content-type": "application/json"
@@ -122,7 +122,7 @@ const Account = () => {
     }
     try {
       let token = localStorage.getItem("token")
-      let response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/changepassword`, {
+      let response = await fetch(`/api/changepassword`, {
         method: "POST",
         headers: {
           "content-type": "application/json"

@@ -1,8 +1,31 @@
 import Head from 'next/head'
 import Image from 'next/image'
-
+import { useEffect, useState } from 'react';
+import styles from "../styles/Home.module.css"
 
 export default function Home() {
+  const [user, setUser] = useState(null);
+  const fetchUser = async () => {
+    try {
+      let token = localStorage.getItem("token");
+      const data = await fetch(`/api/getUser?token=${token}`)
+      const result = await data.json()
+      console.log(token)
+      if (data.status === 200) {
+        console.log(result.name)
+        setUser(result.name)
+      }
+
+
+    } catch (error) {
+      console.log(error)
+
+    }
+  }
+
+  useEffect(() => {
+    fetchUser()
+  }, [])
   return (
     <div>
       <Head>
@@ -11,9 +34,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <img className="w-full" src={"/home.jpg"} alt="Loading..." />
+
+        <div class={styles.container}>
+          <img className={`w-full ${styles.img}`} src={"/bg.jpg"} alt="Loading..." />
+
+          <div class={styles.centered}>
+            <h1 class={styles.txt}>Welcome To CodesWear <br />{user === null ? "" : user}</h1>
+          </div>
+        </div>
+
+
       </div>
-      <section className="text-gray-600 body-font">
+      {/* <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">
             <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Wear the code with CodesWear.com</h1>
@@ -92,7 +124,7 @@ export default function Home() {
           </div>
           <button className="flex mx-auto mt-16 text-white bg-pink-500 border-0 py-2 px-8 focus:outline-none hover:bg-pink-600 rounded text-lg">Button</button>
         </div>
-      </section>
+      </section> */}
 
     </div>
   )

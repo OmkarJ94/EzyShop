@@ -1,7 +1,7 @@
 import Order from "../../Models/Order"
 import jwt from 'jsonwebtoken';
 import mongoose from "mongoose"
-require("../../Middleware/conn")
+require("../../db/conn")
 export default async function handler(req, res) {
 
     if (req.method === "POST") {
