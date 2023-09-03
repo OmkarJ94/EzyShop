@@ -40,14 +40,14 @@ const Account = () => {
       })
 
     } catch (error) {
-      console.log(error)
+      
 
     }
   }
   const handleSubmit = async (e) => {
 
     e.preventDefault()
-    console.log(data.phone.length)
+    
     if ((data?.phone).length != 10) {
       toast.error("Check Phone Number", {
         position: "top-right",
@@ -91,7 +91,7 @@ const Account = () => {
         });
       }
     } catch (error) {
-      console.log(error.message)
+      
       setLoading(false)
     }
   }
@@ -134,7 +134,7 @@ const Account = () => {
         })
       })
       const result = await response.json()
-      console.log(result)
+      
       if (response.status == 200) {
         setLoading(false)
         toast.success(result.message, {
@@ -165,7 +165,7 @@ const Account = () => {
       }
     } catch (error) {
       setLoading(false)
-      console.log(error);
+      
       toast.error("Something Went Wrong", {
         position: "top-right",
         autoClose: 1000,

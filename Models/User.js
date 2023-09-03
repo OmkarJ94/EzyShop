@@ -13,13 +13,12 @@ const UsersSchema = new mongoose.Schema({
     },
     phone: {
         type: String,
-
-        unique: true
+        default:""
     },
     address: {
         type: String,
+        default:""
 
-        unique: true
     },
     password: {
         type: String,
@@ -29,6 +28,21 @@ const UsersSchema = new mongoose.Schema({
         type: String,
 
     },
+    messages: [{
+        email: {
+            type: String,
+            required: true
+        },
+        subject: {
+            type: String,
+            required: true
+        },
+        message: {
+            type: String,
+            required: true
+        }
+
+    }]
 
 
 

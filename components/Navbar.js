@@ -26,7 +26,7 @@ const Navbar = ({ logout, user, cart, addtoCart, removeCart, clearCart, subTotal
         <ToastContainer />
         <div className="logo mx-5">
           <Link href="/" className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-            <Image src="/logo.jpg" height={20} width={200} alt="Loading..." />
+            <h2 className="text-pink-500 text-bold">EzyShop</h2>
           </Link>
         </div>
         <nav className="mx-5 md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l px-2 md:border-gray-400	flex flex-wrap items-center text-base justify-center">

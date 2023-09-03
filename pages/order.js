@@ -25,10 +25,10 @@ const Order = ({ cart, addtoCart, removeCart, clearCart, subTotal }) => {
         temp = temp[router.query.id]
         setData(temp)
         setProduct(product)
-        console.log(product)
+        
 
       } catch (error) {
-        console.log(error)
+        
       }
     }
     else {
@@ -37,7 +37,7 @@ const Order = ({ cart, addtoCart, removeCart, clearCart, subTotal }) => {
 
   }
   useEffect(() => {
-    console.log(router.query.id)
+    
     fetchData();
   }, [])
   return (

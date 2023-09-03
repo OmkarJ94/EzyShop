@@ -21,7 +21,7 @@ const Slug = ({ cart, addtoCart, removeCart, clearCart, subTotal, products, vari
       setLoading(true)
       let result = await fetch(`https://api.postalpincode.in/pincode/${pin}`);
       result = await result.json()
-      console.log(result)
+      
 
       if (result[0].Status === "Error") {
         setService(false)
@@ -85,7 +85,7 @@ const Slug = ({ cart, addtoCart, removeCart, clearCart, subTotal, products, vari
               <hr />
               <p className="leading-relaxed">{products.desc}</p>
               <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
-                {products.category === "T-shirts" || products.category === "Hoodies" ? <div div className="flex">
+                {products.category === "T-shirts" || products.category === "Hoodies" || products.category === "Mugs" ? <div div className="flex">
                   <span className="mr-3">Color</span>
                   {Object.keys(variants).includes("white") && Object.keys(variants['white']).includes(availablesize) && < button onClick={(e) => { refresh(availablesize, 'white') }} className={`border-2 ${availablecolor === 'white' ? 'border-black' : 'border - gray - 300'} ml-1 bg-white rounded-full w-6 h-6 focus:outline-none`} />}
                   {Object.keys(variants).includes("black") && Object.keys(variants['black']).includes(availablesize) && < button onClick={(e) => { refresh(availablesize, 'black') }} className={`border-2 ml-1 ${availablecolor === 'black' ? 'border-black' : 'border - gray - 300'} bg-black rounded-full w-6 h-6 focus:outline-none`} />}

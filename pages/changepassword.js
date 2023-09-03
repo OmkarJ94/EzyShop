@@ -72,7 +72,7 @@ const Changepassword = () => {
                 setLoading(false)
             }
         } catch (error) {
-            console.log(error)
+            
             toast.error("Something Went Wrong", {
                 position: "top-right",
                 autoClose: 1000,

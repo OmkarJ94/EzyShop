@@ -23,7 +23,7 @@ const Orders = ({ user, clearCart }) => {
 
 
         } catch (error) {
-            console.log(error)
+            
         }
     }
 

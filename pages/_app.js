@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }) {
   }, [router.query])
 
   const saveCart = (mycart) => {
-    console.log(mycart)
+    
     localStorage.setItem("cart", JSON.stringify(mycart))
     let subt = 0;
     let keys = Object.keys(mycart)

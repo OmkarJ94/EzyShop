@@ -3,14 +3,17 @@ import User from "../../Models/User"
 require("../../db/conn")
 var CryptoJS = require("crypto-js");
 export default async function handler(req, res) {
+    console.log(req.body)
     const { name, email, password, cpassword, phone, address } = req.body
 
     if (req.method === "POST") {
         let user = await User.findOne({ email })
         if (user) {
-            console.log(user)
-            user.address = address;
-            user.phone = phone;
+
+            if (phone && address) {
+                user.address = address;
+                user.phone = phone;
+            }
             let status = await user.save();
             if (status) {
                 res.status(200).json({ "status": "true", message: "Your Details Updated Successfully" })
@@ -24,7 +27,7 @@ export default async function handler(req, res) {
 
         try {
             if (password != cpassword) {
-                console.log("here")
+
                 res.status(500).json({ "status": "error" })
                 return;
             }

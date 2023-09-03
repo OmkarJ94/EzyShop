@@ -4,6 +4,7 @@ import Order from "../../Models/Order"
 import Product from "../../Models/Prod"
 
 export default async function transcation(req, res) {
+    
     if (req.method === "POST") {
 
         try {
@@ -56,7 +57,7 @@ export default async function transcation(req, res) {
                 res.status(500).json({ "status": "false" })
             }
         } catch (error) {
-            console.log(error)
+            
             res.status(500).json({ status: "error" })
         }
     }

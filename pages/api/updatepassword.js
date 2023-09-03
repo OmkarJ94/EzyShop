@@ -7,7 +7,7 @@ export default async function handler(req, res) {
     if (req.method === "POST") {
         try {
             let { email, password, cpassword, otp } = req.body;
-            console.log(email, password, cpassword, otp)
+            
             let user = await User.findOne({ email });
             let result = await Otp.findOne({ Otp: otp, email: email });
     

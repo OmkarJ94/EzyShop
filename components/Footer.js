@@ -11,11 +11,10 @@ const Footer = () => {
 
             <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
 
-              <Image width={200} height={40} src="/logo.jpg" alt="Loading..." />
-
+           
+              <p className="mt-2 text-bold px-4 text-pink-500">EzyShop</p>
             </a>
 
-            <p className="mt-2 text-sm px-4 text-gray-500">Wear the &lt;code/&gt;</p>
             <p className="mt-2 text-sm px-4 text-gray-500">Premium coding tshirts, hoodies and apparals</p>
           </div>
           <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
@@ -71,7 +70,7 @@ const Footer = () => {
             <p className="text-gray-500 text-sm text-center sm:text-left">© 2022 CODESWEAR —
               All Rights Reserved
             </p>
-         
+
           </div>
         </div>
       </footer>

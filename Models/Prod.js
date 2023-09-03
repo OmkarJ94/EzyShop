@@ -19,6 +19,7 @@ const ProductsSchema = new mongoose.Schema({
     color: { type: String },
     price: { type: Number },
     availableQty: { type: Number },
+
 })
 mongoose.models = {}
 export default mongoose.model("Product", ProductsSchema)
